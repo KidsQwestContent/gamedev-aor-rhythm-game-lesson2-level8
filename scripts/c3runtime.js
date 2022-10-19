@@ -4143,13 +4143,13 @@ self.C3_ExpressionFuncs = [
 		() => 3,
 		() => "level8b",
 		() => "Black11",
-		() => "Level 7a",
+		() => "Level 8a",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => "Level 7b",
-		() => "Level 7c",
+		() => "Level 8b",
+		() => "Level 8c",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
