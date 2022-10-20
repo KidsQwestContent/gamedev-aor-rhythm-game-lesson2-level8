@@ -3907,7 +3907,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.loopindex,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Behaviors.Pin.Acts.PinByProperties,
-		C3.Plugins.Touch.Cnds.OnTapGestureObject,
+		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Cnds.IsVisible,
@@ -3934,6 +3934,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Cnds.LayerVisible,
+		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.System.Acts.GoToLayoutByName
@@ -4089,7 +4090,10 @@ self.C3_ExpressionFuncs = [
 		() => "count_down",
 		() => "GAME OVER",
 		() => "level8a",
-		() => 2.75,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() * 3);
+		},
 		() => "playing",
 		p => {
 			const n0 = p._GetNode(0);
